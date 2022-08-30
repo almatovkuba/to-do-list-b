@@ -1,0 +1,110 @@
+@font-face {
+	font-family: Roboto;
+	src: url('fonts/Roboto-Regular.woff') format('woff'),
+		 url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+body{
+    background-color: #50e79c;
+    font-family: Roboto;
+}
+#to-do{
+    width: 400px;
+    margin: 70px auto;
+    border-radius: 30px;
+    border: 1px solid #cfd8dc;
+    box-shadow: 0 0 10px rgb(116, 226, 217);
+}
+.to-do-header{
+    background-color: #3f94d6;
+    color: #fff;
+    height: 80px;
+    border-radius: 30px 30px 0 0;
+}
+.to-do-header h2{
+    margin: 0;                            /* to remove the gap between the text (To-do list) and border*/
+    text-align: center;
+    line-height: 80px;
+    font-size: 32px;
+}
+.add-block{
+    height: 50px;  
+    border-top: 1px solid #cfd8dc;
+    border-bottom: 1px solid #cfd8dc;                     
+}
+.add-field{
+    width: 80%;                         /*because col-3 is 20%, i.e. 100%-20%*/
+    height: 50px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    float: left;                        /*to make it in one line with '+' button*/
+    border: 0;                          /*to remove border lines/frame*/
+    outline: none;                      /*to remove the blue outline when clicking inside the input box*/
+    font-size: 15px;
+}
+.add-button{                            /*the '+' sign*/
+   border: 0;
+   padding: 0;
+   color: #3f94d6;
+   font-size: 45px;
+   font-weight: bold;
+   outline: none;
+}
+.tasks{
+    margin: 0;                          /*to place them within the entire frame*/
+    padding: 0;
+}
+.task{
+    list-style: none;                   /*to remove the black dots before 'Task 1/2/etc'*/
+    border: 1px solid #cfd8dc;
+    height: 50px;
+}
+.task:last-child{                       /*to round the edges at the bottom left and right*/
+    border-radius: 0 0 30px 30px;
+} 
+.task:last-child .col-1{                        
+    border-radius: 0 0 0 30px;
+}
+.task:last-child .col-3{                          
+    border-radius: 0 0 30px 0;
+}
+.col-1{
+    width: 10%;
+    height: 100%; 
+    float: left;                            /*to ensure everything is in one row*/
+    background-color: #bbdefb;
+    display: flex;                          /*to place the checkbox in the middle*/
+    align-items: center;
+    justify-content: center;
+}
+.col-1 input{
+    cursor: pointer;
+}
+.col-2{
+   width: 70%;
+   height: 100%;
+   float: left; 
+   background-color: #fff;
+   display: flex;                            /*to put the Task 1/2/3.. in the center*/
+   align-items: center;
+   padding-left: 15px;                       /*to space it from the left*/
+   box-sizing: border-box;                   /*to remove the increase of the box due to padding applied*/
+}
+.col-3{
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: #bbdefb;
+}
+.col-3:hover{
+    background-color: #90caf9;
+    cursor: pointer;
+}
+.task-remove{
+    background-image: url(img/trash.svg);
+    background-size: 30px;                  /*size of the image*/
+    background-repeat: no-repeat;           /*so that image does not repeat*/
+    background-position: center;            /*to center the image in the frame*/
+}
+.checked{                                   /*to be applied with JS*/
+    text-decoration: line-through;
+}
